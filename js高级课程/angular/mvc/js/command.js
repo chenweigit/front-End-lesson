@@ -17,3 +17,19 @@ function listIfno($scope){
 function bindInfo($scope){
      $scope.str = 'ng-bind ok';
 }
+
+/*
+ 表单的  change  事件
+ */
+function changeVal($scope) {
+     $scope.info={
+         inp:1,
+         price:50,
+         out:50
+     }
+
+    $scope.chagnePri=function(){
+        $scope.info.out =  $scope.info.inp * $scope.info.price;
+    }
+
+}

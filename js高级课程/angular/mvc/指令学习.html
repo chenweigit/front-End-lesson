@@ -19,9 +19,20 @@
 </ul>
 </div>
 
+<hr />
+<!-- bind 指令 -->
 <div ng-controller="bindInfo">
     <label ng-bind="str"></label>
    <!-- 界面加载过程中需要 出现的数据  -->
+</div>
+
+<hr />
+<!--  表单的  change  事件（和HTML 的事件不要混合）   -->
+
+<div ng-controller="changeVal">
+    <input type="text" ng-model="info.inp" ng-change="chagnePri()"/>
+    <input type="text" ng-model="info.price" ng-change="chagnePri()" />
+    <label ng-bind="info.out" ></label>
 </div>
 
 
