@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul li{
+            width: 200px;
+            background-color: #9cf;
+            margin-top: 3px;
+        }
+    </style>
+    <script src="js/angular.min.js"></script>
+    <script>
+        //  控制器
+      function reMoveInfo($scope){
+            $scope.listinfo = ['a','b','c'];
+
+            $scope.removeli= function(i){
+                $scope.listinfo.splice(i,1);
+               /*
+                在angular 中模型的变化会自动同步到视图中，
+                意味着如果我模型中有三条数据，同步在某个视图里，如果我删除模型的其中一条，
+                那么视图中所对应的数据就会被删除，同时对应的节点也会自动删除。
+                所以我们只需要改变模型的数据，视图中DOM  操作就交给angular
+                */
+            }
+        };
+    </script>
+</head>
+<body>
+<!-- 删除数据  视图-->
+<div ng-controller="reMoveInfo">
+    <ul  >
+        <li ng-repeat="m in listinfo" ng-click="removeli($index)" ng-bind="m"></li>
+        <!-- $index  是遍历的对象的索引 -->
+    </ul>
+</div>
+
+</body>
+</html>
