@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="mymod">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/angular.min.js"></script>
+    <script>
+        var tempmymod = angular.module('mymod',[]);
+        tempmymod.controller('showData',['$scope','$http',function($scope,$http){
+            $scope.getJsonInfo= function(){
+                $http({
+                    method:'get',
+                    url:'data.json'
+                }).success(function(data){
+                    console.log(data);
+                    $scope.datainfo = data;
+                });
+            }
+
+          //   post
+            $scope.postfn= function(){
+                 $http.post('/pet/info',{name:'ck'},{params:{id:1}}).success(function(d){
+
+                 });
+            }
+
+            //   get
+            $scope.getfn= function(){
+                $http.get('/pet/info',{params:{id:1}}).success(function(d){
+
+                });
+            }
+
+        }]);
+
+    </script>
+</head>
+<body>
+  <div ng-controller="showData">
+        <button ng-click="getJsonInfo()">get</button>
+        <button ng-click="postfn()">post</button>
+        <button ng-click="getfn()">get</button>
+
+      <ul>
+          <li ng-repeat="i in datainfo" ng-bind="i.classname"></li>
+      </ul>
+
+  </div>
+</body>
+</html>
