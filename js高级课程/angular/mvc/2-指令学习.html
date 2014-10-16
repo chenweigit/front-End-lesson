@@ -26,15 +26,19 @@
    <!-- 界面加载过程中需要 出现的数据  -->
 </div>
 
+
+<hr />
+<br/>
+
 <!-- 表单指令 -->
-<form action="#" ng-controller="formInfo">
+<form action="/login" ng-controller="formInfo">
     <input type="text"  ng-change="changeInfo()"  ng-model="text" />
     <input type="text"  ng-model="scoinfo" />
     <a href="" ng-click="clickEvent()">login</a>
 </form>
 
-
 <hr />
+<br/>
 <!--  表单的  change  事件（和HTML 的事件不要混合）   -->
 
 <div ng-controller="changeVal">
@@ -44,12 +48,16 @@
 </div>
 
 
-
+<hr />
+<br/>
 
 <!-- hide  and  show -->
 
-<div ng-show="true">show</div>
-<div ng-hide="true">hide</div>
+<div ng-controller="hideElement">
+    <div ng-show="showinfo">show</div>
+    <div ng-hide="hideinfo">hide</div>
+</div>
+
 
 
 <script src="js/angular.min.js"></script>
