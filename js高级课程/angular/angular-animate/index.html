@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="animatemod">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../publicjs/angular1.3.1.js"></script>
+    <script src="js/angular-animate.js"></script>
+    <!-- 注意angular 低版本冲突问题 -->
+    <script >
+        var animatemod= angular.module('animatemod',['ngAnimate']);
+    </script>
+</head>
+<body>
+<ul >
+    <li ng-repeat=" i in ['a','b','c']" ng-bind="i"></li>
+</ul>
+
+</body>
+</html>
